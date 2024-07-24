@@ -1,5 +1,5 @@
 """
-- Jeu du Snake crée par Arnaud Grandchamp
+- Jeu du Snake crée par Mycode Developpment
 - Début : 20/07/2024
 - Fin : 20/07/2024
 - Durée : 3H-4H
