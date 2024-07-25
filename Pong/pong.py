@@ -5,7 +5,7 @@ Fin : 22/07
 Durée : 3H
 """
 
-import pygame, sys, button
+import pygame, sys, button, os
 pygame.init()
 
 class Game():
@@ -143,9 +143,15 @@ pygame.display.set_caption("PONG")
 font = pygame.font.SysFont("Comic Sans", 55)
 font2 = pygame.font.SysFont("Futura", 20)
 
+#chemin relatif :
+current_dir = os.path.dirname(__file__)  # Répertoire du script pong.py
+image_path_resume = os.path.join(current_dir, 'img', 'button_resume.png')
+image_path_quit = os.path.join(current_dir, 'img', 'button_quit.png')
+
 #image bouton 
-resume_img = pygame.image.load("img/button_resume.png").convert_alpha()
-quit_img = pygame.image.load("img/button_quit.png").convert_alpha()
+resume_img = pygame.image.load(image_path_resume).convert_alpha()
+quit_img = pygame.image.load(image_path_quit).convert_alpha()
+
 resume_button = button.Button(WIDTH//2-100, HEIGHT//2-100., resume_img, 1)
 quit_button = button.Button(WIDTH//2-75, HEIGHT//2+50, quit_img, 1)
 
