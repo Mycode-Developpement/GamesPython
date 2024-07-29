@@ -45,6 +45,14 @@ Pour une vue plus détaillée de mon parcours d'apprentissage, abonnez-vous à m
 - **Temps estimé**: 5-6 heures
 - **Note**: Problème de rotation qui a cassé quelques fonctionnalités (à corriger)
 
+### 5. Pacman
+
+- **Type de jeu**: Arcade
+- **Début du projet**: 27/07
+- **Fin du projet**: 29/07
+- **Temps estimé**: 6-7H
+- **Fichier principal a lancé**: **pacman.py**
+
 
 ## Licence
 
