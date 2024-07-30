@@ -15,6 +15,7 @@ Pour une vue plus détaillée de mon parcours d'apprentissage, abonnez-vous à m
 3. [Pong](#3-pong)
 4. [Tetris](#4-tetris)
 5. [Pacman](#5-pacman)
+5. [Racing Course](#6-racing-course)
 
 ### 1. Snake
 
@@ -52,6 +53,14 @@ Pour une vue plus détaillée de mon parcours d'apprentissage, abonnez-vous à m
 - **Fin du projet**: 29/07
 - **Temps estimé**: 6-7H
 - **Fichier principal a lancé**: **pacman.py**
+
+### 6. Racing Course
+
+- **Type de jeu**: Course
+- **Début du projet**: 29/07
+- **Fin du projet**: 30/07
+- **Temps estimé**: 4H
+- **Fichier principal a lancé**: **main.py**
 
 
 ## Licence
