@@ -1,5 +1,9 @@
 """
-Jeu de combat 1 contre 1
+FIGHT 1v1 est un jeu de combat en 1 contre 1 où deux joueurs s'affrontent dans un duel intense. 
+Chaque joueur contrôle un personnage avec des mouvements spécifiques, des attaques et des capacités
+spéciales. Le but est de vaincre l'adversaire en réduisant sa barre de vie à zéro. 
+Le jeu comprend des animations fluides, des effets spéciaux et des mécanismes de combat pour 
+offrir une expérience immersive.
 Début : 04/08
 FIN : 09/08
 DUREE : 12 Heures
