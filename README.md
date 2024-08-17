@@ -17,6 +17,7 @@ Pour une vue plus détaillée de mon parcours d'apprentissage, abonnez-vous à m
 5. [Pacman](#5-pacman)
 6. [Racing Course](#6-racing-course)
 7. [FIGHT 1v1](#7-fight-1v1)
+8. [Platformer](#8-platformer)
 
 ### 1. Snake
 
@@ -133,6 +134,24 @@ Pour une vue plus détaillée de mon parcours d'apprentissage, abonnez-vous à m
 | Activation Super|Bouton 0+2|
 
 *Activation super* : possible lorsque la jauge de vie devient violette
+
+### 8. Platformer
+
+- **Type de jeu**: Plateforme
+- **Début du projet**: 12/08/2024
+- **Fin du projet**: 17/08/2024
+- **Temps estimé**: 8-10 heures
+- **Fichier principal à lancer**: **main.py**
+
+#### Description du Jeu
+
+**Platformer** est un jeu de plateforme où le joueur doit naviguer à travers différents niveaux remplis de pièges et d'obstacles tout en récupérant 3 fruits pour passer au niveau suivant. Le jeu se compose de sauts précis, de pièges mortels, et de nombreux défis qui mettront à l'épreuve vos compétences en plateforme.
+
+**Fonctionnalités principales** :
+- **Niveaux variés** : Chaque niveau présente un nouvel ensemble de défis et de pièges uniques.
+- **Objectifs de collecte** : Le joueur doit récupérer 3 fruits par niveau pour avancer.
+- **Défis croissants** : La difficulté augmente progressivement avec des niveaux plus complexes.
+
 
 ## Installation et Exécution
 

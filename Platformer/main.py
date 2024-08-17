@@ -35,6 +35,9 @@ class Game():
         
         self.text_start = self.font.render("Collect 3 fruits to advance to the next level! ", True, (255,255,255))
         self.text_start2 = self.font.render("Watch out for all the traps!", True, (255,255,255))
+        self.text_end = self.font.render("Thank you for playing this game ", True, (255,255,255))
+        self.text_end2 = self.font.render("MYCODE-DEVELOPPEMENT on Youtube", True, (255,255,255))
+        
     def next_level(self):
         self.level += 1
         self.start()
@@ -101,6 +104,10 @@ class Game():
         if self.level == 1:
             screen.blit(self.text_start, (WIDTH//2-self.text_start.get_width()//2,100))
             screen.blit(self.text_start2, (WIDTH//2-self.text_start2.get_width()//2,200))
+        
+        if self.level == len(self.map):
+            screen.blit(self.text_end, (WIDTH//2-self.text_end.get_width()//2,100))
+            screen.blit(self.text_end2, (WIDTH//2-self.text_end2.get_width()//2,200))
     
 
     def detect_coll_fruit(self):
