@@ -12,6 +12,7 @@ from fruits import Fruit
 from random import randint
 from item import Item
 from enemies import Enemie
+from cloudSprite import Cloud
 import map
 
 pygame.init()
@@ -23,14 +24,17 @@ class Game():
         self.all_blocks = pygame.sprite.Group()
         self.all_fruits = pygame.sprite.Group()
         self.all_traps = pygame.sprite.Group()
+        self.all_clouds = pygame.sprite.Group(Cloud(1100, randint(50,150), CLOUD, 1))
         self.map = map
         self.font = pygame.font.SysFont('COMIC SANS', 33)
-        self.generation(self.map[0])
+        self.level = 1
+        self.generation(self.map[self.level-1])
 
         self.player = Player(SIZE_BLOCK + 2,HEIGHT-2*SIZE_BLOCK - 2, PLAYER_IMAGE,SPRITE_BY_LINE , DATA, self)
         self.all_players = pygame.sprite.Group(self.player)
-        self.level = 1
-
+        
+        self.text_start = self.font.render("Collect 3 fruits to advance to the next level! ", True, (255,255,255))
+        self.text_start2 = self.font.render("Watch out for all the traps!", True, (255,255,255))
     def next_level(self):
         self.level += 1
         self.start()
@@ -61,6 +65,12 @@ class Game():
                 elif num==5: #monster Blink 
                     self.all_traps.add(Enemie(index2*SIZE_BLOCK,index1*SIZE_BLOCK-22, BLINK,4, (54,52), 1, self, False ))
                 
+                elif num==6: #monster man 
+                    self.all_traps.add(Enemie(index2*SIZE_BLOCK,index1*SIZE_BLOCK-2, ENEMIES[randint(0, len(ENEMIES)-1)],12, (32,32), 1, self))
+                
+                elif num == 7: #demi dalle
+                    self.all_blocks.add(Block(index2*SIZE_BLOCK,index1*SIZE_BLOCK, TILE_1, True))
+                
 
     def move(self):
         keys = pygame.key.get_pressed()
@@ -73,12 +83,24 @@ class Game():
         self.player.animations()
         for trap in self.all_traps:
             trap.animations()
+        
+        for cloud in self.all_clouds:
+            cloud.move()
+        
+        #fénérération nuage
+        if randint(0,100) == 3 and len(self.all_clouds) < 4:
+            self.all_clouds.add(Cloud(1100, randint(50,150), CLOUD, 1))
+
 
         self.player.detect_fruit()
 
     def display_text(self):
         text_score = self.font.render(str(self.level), True, (255, 255, 255))
-        screen.blit(text_score, (SIZE_BLOCK+3,SIZE_BLOCK+3))
+        screen.blit(text_score, (SIZE_BLOCK+4,SIZE_BLOCK+2))
+
+        if self.level == 1:
+            screen.blit(self.text_start, (WIDTH//2-self.text_start.get_width()//2,100))
+            screen.blit(self.text_start2, (WIDTH//2-self.text_start2.get_width()//2,200))
     
 
     def detect_coll_fruit(self):
@@ -149,13 +171,14 @@ LIST_FRUITS = create_list_fruits([APPLE_IMG, BANANAS_IMG, CHERRIES_IMG, STRAWBER
 
 #ENEMIES
 BLINK = pygame.image.load(os.path.join(current_dir, 'img','Enemies', 'Blink.png')).convert_alpha()
+ENEMIES = [pygame.image.load(os.path.join(current_dir, 'img','Enemies', 'BlueMan.png')).convert_alpha(), pygame.image.load(os.path.join(current_dir, 'img','Enemies', 'mask.png')).convert_alpha(),pygame.image.load(os.path.join(current_dir, 'img','Enemies', 'pinkMan.png')).convert_alpha()]
 
 #TRAPS
 TRAPS = [pygame.image.load(os.path.join(current_dir, 'img','Traps', 'spike.png')).convert_alpha(),pygame.image.load(os.path.join(current_dir, 'img','Traps', 'scie.png')).convert_alpha(), ]
 
 #DECOR
 FLAG = pygame.image.load(os.path.join(current_dir, 'img', 'flag.png')).convert_alpha()
-
+CLOUD = pygame.image.load(os.path.join(current_dir, 'img', 'cloud.png')).convert_alpha()
 
 #game loop
 running = True
@@ -173,7 +196,8 @@ while running:
     #move player
     game.move()
 
-    screen.fill((0,0,0))
+    screen.fill((93, 173, 226))
+    game.all_clouds.draw(screen)
     game.all_blocks.draw(screen)
     game.all_fruits.draw(screen)
     game.all_traps.draw(screen)

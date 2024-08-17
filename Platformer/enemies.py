@@ -36,8 +36,22 @@ class Enemie(pygame.sprite.Sprite):
                 self.frame = 0
             self.image = self.images[self.frame]
 
+            if self.direction == "LEFT":
+                    self.image = pygame.transform.flip(self.image, True, False)
+        
+
     def move(self):
         if self.horizontal:
+            self.rect.y +=1 #vérifier s'il n'y a plus de sol en dessous
+            
+            if not self.game.detect_collision(self, self.game.all_blocks):
+                if self.direction == "LEFT":
+                    self.direction = "RIGHT"
+                else:
+                    self.direction = "LEFT"
+
+            self.rect.y -=1
+            #vérifier s'il touche block sur coté
             if self.direction == "RIGHT":
                 self.rect.x += self.speed
                 if self.game.detect_collision(self, self.game.all_blocks):

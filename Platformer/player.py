@@ -67,8 +67,9 @@ class Player(pygame.sprite.Sprite):
             self.count_jump += 15
             if self.game.detect_collision(self, self.game.all_blocks):
                 self.rect.y += 15
-                self.action = 3
-                self.frame = 0
+                if self.is_life:
+                    self.action = 3
+                    self.frame = 0
 
         #gravity
         self.rect.y += 3
