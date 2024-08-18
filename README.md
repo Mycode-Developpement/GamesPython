@@ -3,6 +3,7 @@
 ## Présentation
 
 Bienvenue sur le dépôt GitHub de Mycode Developpement ! Ce projet est le fruit d'un défi personnel de 1 mois pour apprendre et maîtriser le développement de jeux vidéo en Python. Vous trouverez ici divers jeux que j'ai créés, chacun représentant une étape de mon apprentissage et de mes compétences en développement de jeux vidéo.
+(les différents codes présentent des erreurs mais cela montrent bien l'évolution au fil du temps)
 
 ## Suivez Mon Aventure sur YouTube
 
